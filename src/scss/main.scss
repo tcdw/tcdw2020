@@ -1,3 +1,9 @@
+@import '~normalize.css/normalize.css';
+@import './config.scss';
+
 body {
-    background-color: blue;
+    font-size: 16px;
+    background-color: var(--root-bg);
 }
+
+@import './menu.scss';

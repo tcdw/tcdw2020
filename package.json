@@ -27,10 +27,12 @@
     "rollup-plugin-progress": "^1.1.2"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "rollup-plugin-terser": "^7.0.2"
   },
   "scripts": {
     "build": "del-cli dist/assets/*.js dist/assets/*.css dist/assets/*.map && cross-env NODE_ENV=production rollup -c ./scripts/rollup.config.js",
-    "lint": "eslint src/**/*.ts"
+    "lint": "eslint src/**/*.ts",
+    "serve": "rollup -c ./scripts/rollup.config.js -w"
   }
 }

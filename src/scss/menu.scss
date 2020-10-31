@@ -1,0 +1,79 @@
+nav.menu-dt {
+    $menuWidth: 920px;
+    $menuHeight: 4rem;
+    $avatarSize: 2.9rem;
+    $avatarOutline: 0.9rem;
+    $menuItemPadding: 1.2rem;
+    $textSize: 1.125rem;
+
+    background-color: var(--menu-dt-bg);
+    & > .wrap {
+        margin: 0 auto;
+        max-width: $menuWidth;
+        height: $menuHeight;
+        box-sizing: content-box;
+        position: relative;
+    }
+    a.avatar {
+        display: block;
+        background-image: url(avatar_2020.png);
+        background-size: contain;
+        width: $avatarSize;
+        height: $avatarSize;
+        position: absolute;
+        border-radius: 50%;
+        border: $avatarOutline solid var(--menu-dt-bg);
+        top: ($menuHeight - ($avatarSize + $avatarOutline * 2)) / 2;
+    }
+    a.nav-item {
+        display: block;
+        position: relative;
+        height: $menuHeight;
+        line-height: $menuHeight;
+        padding: 0 $menuItemPadding;
+        font-size: $textSize;
+        text-decoration: none;
+        color: var(--menu-dt-fg);
+        transition: color 0.2s;
+        font-weight: bold;
+        &::after {
+            $lineExtend: 0.5rem;
+
+            content: " ";
+            position: absolute;
+            display: block;
+            left: $menuItemPadding - ($lineExtend / 2);
+            top: ($menuHeight / 2) + ($textSize / 2) + 0.45rem;
+            width: calc(100% - #{$menuItemPadding * 2 - $lineExtend});
+            height: 0.2rem;
+            background-color: var(--theme);
+            transform: scaleX(0);
+            transition: transform 0.2s;
+            pointer-events: none;
+        }
+        &:hover {
+            color: var(--theme);
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        float: left;
+        li {
+            // display: inline-block;
+            margin: 0;
+            padding: 0;
+            float: left;
+            &:first-child {
+                margin-left: ($avatarSize + $avatarOutline * 2) + 1rem;
+            }
+        }
+    }
+    .rss {
+        float: right;
+    }
+}
