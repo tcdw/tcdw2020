@@ -1,0 +1,30 @@
+header.banner {
+    $bannerWidth: 960px;
+    $bannerHeight: 12rem;
+    $bannerPadding: 1.5rem;
+    $descFontSize: 1rem;
+    $descLineHeight: 1.6rem;
+
+    padding-top: $menuHeight;
+    background-color: var(--theme);
+    color: var(--banner-fg);
+    .wrap {
+        max-width: $bannerWidth;
+        height: $bannerHeight;
+        padding: 0 $bannerPadding;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+            font-size: 2.1rem;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 0.6em;
+        }
+        .description {
+            font-size: 1rem;
+            line-height: $descLineHeight;
+            margin: -($descLineHeight - $descFontSize) / 2 0;
+        }
+    }
+}

@@ -1,18 +1,21 @@
 nav.menu-dt {
-    $menuWidth: 920px;
-    $menuHeight: 4rem;
+    // $menuHeight 在 config.scss 里作为全局变量提供，这是因为其它的一些东西也需要它
+    $menuWidth: 1100px;
+    $menuPadding: 1rem;
     $avatarSize: 2.9rem;
     $avatarOutline: 0.9rem;
     $menuItemPadding: 1.2rem;
     $textSize: 1.125rem;
 
+    position: fixed;
+    width: 100%;
+    top: 0;
     background-color: var(--menu-dt-bg);
     & > .wrap {
-        margin: 0 auto;
         max-width: $menuWidth;
         height: $menuHeight;
-        box-sizing: content-box;
         position: relative;
+        padding: 0 $menuPadding;
     }
     a.avatar {
         display: block;
@@ -37,7 +40,8 @@ nav.menu-dt {
         transition: color 0.2s;
         font-weight: bold;
         &::after {
-            $lineExtend: 0.5rem;
+            $lineExtend: 0.6rem;
+            $bold: 0.2rem;
 
             content: " ";
             position: absolute;

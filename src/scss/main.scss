@@ -1,9 +1,5 @@
 @import '~normalize.css/normalize.css';
 @import './config.scss';
-
-body {
-    font-size: 16px;
-    background-color: var(--root-bg);
-}
-
+@import './general.scss';
 @import './menu.scss';
+@import './banner.scss';

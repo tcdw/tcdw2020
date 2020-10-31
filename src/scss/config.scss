@@ -1,9 +1,11 @@
 // SCSS 变量
+$menuHeight: 4rem;
 
 // 通用颜色设定
 :root {
     --theme: #66ccff;
-    --root-bg: #66ccff;
+    --root-bg: #f2f2f2;
     --menu-dt-bg: #fff;
     --menu-dt-fg: #222;
+    --banner-fg: #fff;
 }
