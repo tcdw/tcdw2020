@@ -6,6 +6,7 @@ header.banner {
     $descLineHeight: 1.6rem;
 
     padding-top: $menuHeight;
+    padding-bottom: $bannerOverflow;
     background-color: var(--theme);
     color: var(--banner-fg);
     .wrap {
