@@ -1,10 +1,4 @@
-header.banner {
-    $bannerWidth: 960px;
-    $bannerHeight: 12rem;
-    $bannerPadding: 1.5rem;
-    $descFontSize: 1rem;
-    $descLineHeight: 1.6rem;
-
+& > header.banner {
     padding-top: $menuHeight;
     padding-bottom: $bannerOverflow;
     background-color: var(--theme);
@@ -17,15 +11,15 @@ header.banner {
         flex-direction: column;
         justify-content: center;
         h1 {
-            font-size: 2.1rem;
+            font-size: $bannerTitleFontSize;
             margin: 0;
             padding: 0;
             padding-bottom: 0.6em;
         }
         .description {
             font-size: 1rem;
-            line-height: $descLineHeight;
-            margin: -($descLineHeight - $descFontSize) / 2 0;
+            line-height: $bannerDescLineHeight;
+            margin: -($bannerDescLineHeight - $bannerDescFontSize) / 2 0;
         }
     }
 }

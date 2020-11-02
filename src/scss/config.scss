@@ -1,6 +1,23 @@
 // SCSS 变量
+$mainWidth: 960px;
+
+$menuWidth: 1100px;
 $menuHeight: 4rem;
+$menuPadding: 1rem;
+$menuAvatarSize: 2.9rem;
+$menuAvatarOutline: 0.9rem;
+$menuItemPadding: 1.2rem;
+$menuTextSize: 1.125rem;
+
+$bannerWidth: 960px;
+$bannerHeight: 12rem;
+$bannerPadding: 1.5rem;
+$bannerTitleFontSize: 2.1rem;
+$bannerDescFontSize: 1rem;
+$bannerDescLineHeight: 1.6rem;
 $bannerOverflow: 2rem;
+
+$listPadding: 1rem;
 
 // 通用颜色设定
 :root {
@@ -9,4 +26,5 @@ $bannerOverflow: 2rem;
     --menu-dt-bg: #fff;
     --menu-dt-fg: #222;
     --banner-fg: #fff;
+    --article-bg: #fff;
 }

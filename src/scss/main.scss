@@ -1,6 +1,9 @@
 @import '~normalize.css/normalize.css';
 @import './config.scss';
 @import './general.scss';
-@import './menu.scss';
-@import './banner.scss';
-@import './content.scss';
+
+body {
+    @import './menu.scss';
+    @import './banner.scss';
+    @import './content.scss';
+}

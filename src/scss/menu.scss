@@ -1,12 +1,4 @@
-nav.menu-dt {
-    // $menuHeight 在 config.scss 里作为全局变量提供，这是因为其它的一些东西也需要它
-    $menuWidth: 1100px;
-    $menuPadding: 1rem;
-    $avatarSize: 2.9rem;
-    $avatarOutline: 0.9rem;
-    $menuItemPadding: 1.2rem;
-    $textSize: 1.125rem;
-
+& > nav.menu-dt {
     position: fixed;
     width: 100%;
     top: 0;
@@ -21,12 +13,12 @@ nav.menu-dt {
         display: block;
         background-image: url(avatar_2020.png);
         background-size: contain;
-        width: $avatarSize;
-        height: $avatarSize;
+        width: $menuAvatarSize;
+        height: $menuAvatarSize;
         position: absolute;
         border-radius: 50%;
-        border: $avatarOutline solid var(--menu-dt-bg);
-        top: ($menuHeight - ($avatarSize + $avatarOutline * 2)) / 2;
+        border: $menuAvatarOutline solid var(--menu-dt-bg);
+        top: ($menuHeight - ($menuAvatarSize + $menuAvatarOutline * 2)) / 2;
     }
     a.nav-item {
         display: block;
@@ -34,7 +26,7 @@ nav.menu-dt {
         height: $menuHeight;
         line-height: $menuHeight;
         padding: 0 $menuItemPadding;
-        font-size: $textSize;
+        font-size: $menuTextSize;
         text-decoration: none;
         color: var(--menu-dt-fg);
         transition: color 0.2s;
@@ -47,7 +39,7 @@ nav.menu-dt {
             position: absolute;
             display: block;
             left: $menuItemPadding - ($lineExtend / 2);
-            top: ($menuHeight / 2) + ($textSize / 2) + 0.45rem;
+            top: ($menuHeight / 2) + ($menuTextSize / 2) + 0.45rem;
             width: calc(100% - #{$menuItemPadding * 2 - $lineExtend});
             height: 0.2rem;
             background-color: var(--theme);
@@ -73,7 +65,7 @@ nav.menu-dt {
             padding: 0;
             float: left;
             &:first-child {
-                margin-left: ($avatarSize + $avatarOutline * 2) + 1rem;
+                margin-left: ($menuAvatarSize + $menuAvatarOutline * 2) + 1rem;
             }
         }
     }
