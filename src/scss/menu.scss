@@ -3,6 +3,12 @@
     width: 100%;
     top: 0;
     background-color: var(--menu-dt-bg);
+    z-index: $menuDepth;
+    box-shadow: var(--menu-shadow-on);
+    transition: box-shadow 0.18s;
+    &.top {
+        box-shadow: var(--menu-shadow-off);
+    }
     & > .wrap {
         max-width: $menuWidth;
         height: $menuHeight;

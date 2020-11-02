@@ -8,23 +8,36 @@ $menuAvatarSize: 2.9rem;
 $menuAvatarOutline: 0.9rem;
 $menuItemPadding: 1.2rem;
 $menuTextSize: 1.125rem;
+$menuDepth: 10000;
 
 $bannerWidth: 960px;
-$bannerHeight: 12rem;
+$bannerHeight: 13rem;
 $bannerPadding: 1.5rem;
 $bannerTitleFontSize: 2.1rem;
 $bannerDescFontSize: 1rem;
 $bannerDescLineHeight: 1.6rem;
-$bannerOverflow: 2rem;
+$bannerOverflow: 3rem;
 
-$listPadding: 1rem;
+$listPadding: 1.2rem;
+$listDarkenDepth: 50;
+$listTextDepth: 100;
 
 // 通用颜色设定
+$colorTheme: #ff9800;
+
 :root {
-    --theme: #66ccff;
-    --root-bg: #f2f2f2;
+    --theme: #{$colorTheme};
+    --root-bg: #eee;
+    --menu-shadow-on: 0 0 3rem 0 rgba(0, 0, 0, 0.22);
+    --menu-shadow-off: 0 0 3rem 0 rgba(0, 0, 0, 0);
     --menu-dt-bg: #fff;
     --menu-dt-fg: #222;
+    --banner-bg: #{$colorTheme};
     --banner-fg: #fff;
     --article-bg: #fff;
+    --article-fg: #000;
+    --article-title: #0d0d0d;
+    --article-title-hover: #{darken($colorTheme, 11%)};
+    --article-time-bar: #e1e1e1;
+    --article-time-text: #969696;
 }

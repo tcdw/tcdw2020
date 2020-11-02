@@ -1,0 +1,120 @@
+& > main.list {
+    max-width: $mainWidth;
+    margin-top: -$bannerOverflow - ($listPadding / 2);
+    // margin-bottom: -$listPadding / 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". ."
+        ". ."
+        ". .";
+    padding: 0 $listPadding / 2;
+    article {
+        margin: $listPadding / 2;
+        background-color: var(--article-bg);
+        padding: 1.2rem;
+        border-radius: 0.8rem;
+        min-height: 15rem;
+        &:nth-child(2n - 1) {
+            margin-left: 0;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+        h2 {
+            $lineHeight: 1.6em;
+
+            font-size: 1.5rem;
+            line-height: $lineHeight;
+            margin: 0;
+            margin-top: calc(0.3rem - #{($lineHeight - 1) / 2});
+            margin-bottom: calc(1.2rem - #{($lineHeight - 1) / 2});
+            a {
+                color: var(--article-title);
+                text-decoration: none;
+                &:hover {
+                    color: var(--article-title-hover);
+                    text-decoration: underline;
+                }
+            }
+        }
+        .content {
+            $lineHeight: 1.6em;
+            font-size: 1rem;
+            line-height: $lineHeight;
+            margin-top: -($lineHeight - 1) / 2;
+            margin-bottom: -($lineHeight - 1) / 2;
+            color: var(--article-fg);
+
+            // HACK: 「X 行后省略」的勉强解决方案（使用了非标准的 CSS 特性，但是在三大浏览器都被支持了？！）
+            display: block;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;
+            overflow: hidden;
+        }
+        time {
+            border-bottom: 2px var(--article-time-bar) dashed;
+            width: 100%;
+            display: block;
+            padding-bottom: 0.9rem;
+            margin-bottom: 0.9rem;
+            color: var(--article-time-text);
+
+            padding-left: 1.5em;
+            position: relative;
+            box-sizing: border-box;
+            svg.icon {
+                position: absolute;
+                width: 1em;
+                height: 1em;
+                left: 0;
+                display: inline-block;
+                fill: var(--article-time-text);
+            }
+        }
+        &.with-image {
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            // background-color: rgba(0, 0, 0, 0.7);
+            &::after {
+                content: " ";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+                border-radius: 0.8rem;
+                z-index: $listDarkenDepth;
+            }
+            h2 {
+                position: relative;
+                z-index: $listTextDepth;
+                a {
+                    color: rgba(255, 255, 255, 0.9);
+                    &:hover {
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+            .content {
+                position: relative;
+                z-index: $listTextDepth;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            time {
+                position: relative;
+                z-index: $listTextDepth;
+                border-bottom: 2px rgba(255, 255, 255, 0.3) dashed;
+                color: rgba(255, 255, 255, 0.6);
+                svg {
+                    fill: rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+    }
+}
