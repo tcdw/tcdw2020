@@ -1,6 +1,7 @@
 & > main.list {
     max-width: $mainWidth;
     margin-top: -$bannerOverflow - ($listPadding / 2);
+    margin-bottom: -($listPadding / 2);
     // margin-bottom: -$listPadding / 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -10,7 +11,7 @@
         ". ."
         ". ."
         ". .";
-    padding: 0 $listPadding / 2;
+    padding: 0 $listPadding;
     article {
         margin: $listPadding / 2;
         background-color: var(--article-bg);
@@ -49,7 +50,6 @@
             color: var(--article-fg);
 
             // HACK: 「X 行后省略」的勉强解决方案（使用了非标准的 CSS 特性，但是在三大浏览器都被支持了？！）
-            display: block;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 6;
@@ -87,7 +87,7 @@
                 height: 100%;
                 left: 0;
                 top: 0;
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.95) 100%);
                 border-radius: 0.8rem;
                 z-index: $listDarkenDepth;
             }
