@@ -1,7 +1,7 @@
 import './scss/main.scss';
 
 const menuDesktop = document.getElementById('menu-dt');
-const bannerHeight = 11;
+const bannerHeight = 2;
 
 const navTopStyle = () => {
     const scroll = window.pageYOffset;
