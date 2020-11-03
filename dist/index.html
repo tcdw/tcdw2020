@@ -11,7 +11,7 @@
     <link rel="stylesheet" media="screen" href="./assets/main.css">
 </head>
 <body class="index">
-    <nav class="menu-dt" id="menu-dt">
+    <nav class="menu-dt" id="menu-dt" aria-label="导航菜单">
         <div class="wrap">
             <a href="/" title="吐槽大王部落格" class="avatar"></a>
             <ul>
@@ -24,13 +24,13 @@
             </div>
         </div>
     </nav>
-    <header class="banner">
+    <header class="banner" aria-label="横幅">
         <div class="wrap">
             <h1>Personal Blog</h1>
             <div class="description">我是世界上最好的博客！</div>
         </div>
     </header>
-    <main class="wrap list">
+    <main class="wrap list" aria-label="文章列表">
         <article>
             <h2 class="title"><a href="#">新的家庭服务器：MicroServer Gen10</a></h2>
             <time datetime="2020-10-01T00:00:00.000Z">
@@ -86,6 +86,13 @@
             <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed metus eu nibh facilisis maximus. Sed placerat urna leo, eget dignissim leo pharetra sed. In hac habitasse platea dictumst. Nunc eros nibh, finibus ut metus nec, iaculis viverra felis. Ut tempor vitae dolor id faucibus. Vestibulum dictum justo sit amet urna congue mattis. Nam aliquam, ligula at interdum dapibus, sapien magna commodo urna, in molestie sapien elit at dolor. Aenean non diam est.</div>
         </article>
     </main>
+    <nav class="pagination wrap" aria-label="翻页">
+        <div class="inner clearfix">
+            <a class="prev" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow" /></svg>较新的文章</a>
+            <div class="page-num" aria-label="当前页">1 / 6</div>
+            <a class="next" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow" /></svg>以前的文章</a>
+        </div>
+    </nav>
     <!-- 公共 SVG 图形 -->
     <svg id="icon-time" class="shared-icon" viewBox="0 0 488.152 488.152" aria-hidden="true">
         <path d="M177.854,269.311c0-6.115-4.96-11.069-11.08-11.069h-38.665c-6.113,0-11.074,4.954-11.074,11.069v38.66
@@ -112,12 +119,12 @@
     		c-9.154,0-16.577,7.417-16.577,16.573v96.805C344.458,122.533,351.881,129.945,361.035,129.945z" />
     </svg>
     <svg id="icon-arrow" class="shared-icon" viewBox="0 0 447.243 447.243" aria-hidden="true">
-		<path d="M420.361,192.229c-1.83-0.297-3.682-0.434-5.535-0.41H99.305l6.88-3.2c6.725-3.183,12.843-7.515,18.08-12.8l88.48-88.48
-			c11.653-11.124,13.611-29.019,4.64-42.4c-10.441-14.259-30.464-17.355-44.724-6.914c-1.152,0.844-2.247,1.764-3.276,2.754
-			l-160,160C-3.119,213.269-3.13,233.53,9.36,246.034c0.008,0.008,0.017,0.017,0.025,0.025l160,160
-			c12.514,12.479,32.775,12.451,45.255-0.063c0.982-0.985,1.899-2.033,2.745-3.137c8.971-13.381,7.013-31.276-4.64-42.4
-			l-88.32-88.64c-4.695-4.7-10.093-8.641-16-11.68l-9.6-4.32h314.24c16.347,0.607,30.689-10.812,33.76-26.88
-			C449.654,211.494,437.806,195.059,420.361,192.229z"/>
+        <path d="M420.361,192.229c-1.83-0.297-3.682-0.434-5.535-0.41H99.305l6.88-3.2c6.725-3.183,12.843-7.515,18.08-12.8l88.48-88.48
+            c11.653-11.124,13.611-29.019,4.64-42.4c-10.441-14.259-30.464-17.355-44.724-6.914c-1.152,0.844-2.247,1.764-3.276,2.754
+            l-160,160C-3.119,213.269-3.13,233.53,9.36,246.034c0.008,0.008,0.017,0.017,0.025,0.025l160,160
+            c12.514,12.479,32.775,12.451,45.255-0.063c0.982-0.985,1.899-2.033,2.745-3.137c8.971-13.381,7.013-31.276-4.64-42.4
+            l-88.32-88.64c-4.695-4.7-10.093-8.641-16-11.68l-9.6-4.32h314.24c16.347,0.607,30.689-10.812,33.76-26.88
+            C449.654,211.494,437.806,195.059,420.361,192.229z" />
     </svg>
     <script src="./assets/main.js"></script>
 </body>

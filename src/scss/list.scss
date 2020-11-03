@@ -1,28 +1,33 @@
 & > main.list {
     max-width: $mainWidth;
     margin-top: -$bannerOverflow - ($listPadding / 2);
-    margin-bottom: -($listPadding / 2);
-    // margin-bottom: -$listPadding / 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        ". ."
-        ". ."
-        ". .";
-    padding: 0 $listPadding;
+    padding: 0;
+    @media (min-width: $mobileWidth) {
+        padding: 0 $listPadding;
+        margin-bottom: -($listPadding / 2);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            ". ."
+            ". ."
+            ". .";
+    }
     article {
-        margin: $listPadding / 2;
+        margin: $listPaddingMobile;
         background-color: var(--article-bg);
-        padding: 1.2rem;
-        border-radius: 0.8rem;
+        padding: $listBlockPadding;
+        border-radius: $listBlockRadius;
         min-height: 14rem;
-        &:nth-child(2n - 1) {
-            margin-left: 0;
-        }
-        &:nth-child(2n) {
-            margin-right: 0;
+        @media (min-width: $mobileWidth) {
+            margin: $listPadding / 2;
+            &:nth-child(2n - 1) {
+                margin-left: 0;
+            }
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
         }
         h2 {
             $lineHeight: 1.6em;
@@ -114,6 +119,75 @@
                 svg {
                     fill: rgba(255, 255, 255, 0.6);
                 }
+            }
+        }
+    }
+}
+
+& > nav.pagination {
+    max-width: $mainWidth;
+    margin: $listPaddingMobile auto;
+    padding: 0 $listPaddingMobile;
+    @media (min-width: $mobileWidth) {
+        margin: $listPadding auto;
+        padding: 0 $listPadding;
+    }
+    .inner {
+        background-color: var(--article-bg);
+        border-radius: $listBlockRadius;
+        position: relative;
+        a {
+            $fadeDelay: 0.16s;
+    
+            display: block;
+            padding: 1rem;
+            color: var(--pagination-fg);
+            background-color: var(--article-bg);
+            text-decoration: none;
+            position: relative;
+            transition: color $fadeDelay, background-color $fadeDelay;
+            &:hover {
+                color: var(--pagination-fg-hover);
+                background-color: var(--theme);
+                text-decoration: none;
+                .icon {
+                    fill: var(--pagination-fg-hover);
+                }
+            }
+            .icon {
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                top: 1rem;
+                fill: var(--pagination-fg);
+                transition: fill $fadeDelay;
+            }
+        }
+        a.prev {
+            float: left;
+            border-radius: $listBlockRadius 0 0 $listBlockRadius;
+            padding-left: 2.5rem;
+            .icon {
+                left: 1rem;
+            }
+        }
+        a.next {
+            float: right;
+            border-radius: 0 $listBlockRadius $listBlockRadius 0;
+            padding-right: 2.5rem;
+            .icon {
+                transform: rotate(180deg);
+                right: 1rem;
+            }
+        }
+        div.page-num {
+            position: absolute;
+            padding: 1rem 0;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            @media (max-width: $mobileWidth - 1px) {
+                display: none;
             }
         }
     }

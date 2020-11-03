@@ -1,5 +1,6 @@
 // SCSS 变量
 $mainWidth: 960px;
+$mobileWidth: 640px;
 
 $menuWidth: 1100px;
 $menuHeight: 4rem;
@@ -19,8 +20,11 @@ $bannerDescLineHeight: 1.6rem;
 $bannerOverflow: 3rem;
 
 $listPadding: 1.2rem;
+$listPaddingMobile: 0.9rem;
 $listDarkenDepth: 50;
 $listTextDepth: 100;
+$listBlockPadding: 1.2rem;
+$listBlockRadius: 0.8rem;
 
 // 通用颜色设定
 $colorTheme: #ff9800;
@@ -35,9 +39,11 @@ $colorTheme: #ff9800;
     --banner-bg: #{$colorTheme};
     --banner-fg: #fff;
     --article-bg: #fff;
-    --article-fg: #000;
+    --article-fg: #111;
     --article-title: #0d0d0d;
     --article-title-hover: #{darken($colorTheme, 11%)};
     --article-time-bar: #e1e1e1;
     --article-time-text: #969696;
+    --pagination-fg: #111;
+    --pagination-fg-hover: #fff;
 }
