@@ -26,6 +26,8 @@ $listTextDepth: 100;
 $listBlockPadding: 1.2rem;
 $listBlockRadius: 0.8rem;
 
+$footerMarginTop: 2.5rem;
+
 // 通用颜色设定
 $colorTheme: #ff9800;
 
@@ -46,4 +48,7 @@ $colorTheme: #ff9800;
     --article-time-text: #969696;
     --pagination-fg: #111;
     --pagination-fg-hover: #fff;
+    --footer-bg: #333;
+    --footer-fg: #bbb;
+    --footer-fg-hover: #fff;
 }
