@@ -1,19 +1,16 @@
-$lineHeight: 1.7em;
-$verticalPadding: 1.2em;
-
 & > footer {
     color: var(--footer-fg);
     background-color: var(--footer-bg);
     margin-top: $footerMarginTop;
-    padding: $verticalPadding 0;
+    padding: $footerVerticalPadding 0;
     .wrap {
         max-width: $mainWidth;
         padding: 0 $listPaddingMobile;
         @media (min-width: $mobileWidth) {
             padding: 0 $listPadding;
         }
-        line-height: $lineHeight;
-        margin: -($lineHeight - 1) / 2 auto;
+        line-height: $footerLineHeight;
+        margin: -($footerLineHeight - 1) / 2 auto;
         a {
             color: var(--footer-fg);
             text-decoration: none;
