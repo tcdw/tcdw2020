@@ -1,0 +1,19 @@
+.markdown-body {
+    $lineHeight: 1.6rem;
+
+    line-height: $lineHeight;
+
+    @for $i from 1 through 6 {
+        h#{7 - $i} {
+            font-size: 1rem + ($i - 1) * 0.2rem;
+            margin: ($i * 0.3rem + 0.4rem) - ($lineHeight - 1) / 2 0;
+        }
+    }
+    p {
+        font-size: 1rem;
+        margin: 0.8rem - ($lineHeight - 1) / 2 0;
+    }
+    ul, ol {
+        padding-left: 2rem;
+    }
+}

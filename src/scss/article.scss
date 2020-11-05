@@ -12,6 +12,9 @@
         padding: $listBlockPadding;
         border-radius: $listBlockRadius;
     }
+    & > article {
+        @import './markdown.scss';
+    }
     & > .comment {
         margin-top: 1rem;
     }
