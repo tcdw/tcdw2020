@@ -1,0 +1,18 @@
+& > main.content {
+    max-width: $mainWidth;
+    // margin: $listPaddingMobile auto;
+    margin-top: -$bannerOverflow - ($listPadding / 2);
+    padding: 0 $listPaddingMobile;
+    @media (min-width: $mobileWidth) {
+        // margin: $listPadding auto;
+        padding: 0 $listPadding;
+    }
+    & > article, & > .comment {
+        background-color: var(--article-bg);
+        padding: $listBlockPadding;
+        border-radius: $listBlockRadius;
+    }
+    & > .comment {
+        margin-top: 1rem;
+    }
+}
