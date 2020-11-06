@@ -49,6 +49,7 @@
     }
     pre {
         overflow-x: auto;
+        background-color: var(--code-bg);
     }
     & > pre {
         margin: 0 #{-$articlePaddingMobile};
@@ -63,6 +64,8 @@
             @media (min-width: $mobileWidth) {
                 padding: calc(.9rem - #{($lineHeight - 1) / 2}) $articlePadding;
             }
+
+            background-color: var(--code-bg);
         }
     }
 }

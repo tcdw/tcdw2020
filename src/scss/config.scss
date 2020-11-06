@@ -1,8 +1,8 @@
 // SCSS 变量
-$mainWidth: 960px;
-$mobileWidth: 640px;
+$mainWidth: 54rem;
+$mobileWidth: 40rem;
 
-$menuWidth: 1100px;
+$menuWidth: 66rem;
 $menuHeight: 4rem;
 $menuPadding: 1rem;
 $menuAvatarSize: 2.9rem;
@@ -53,6 +53,7 @@ $colorTheme: #ff9800;
     --article-time-text: #969696;
     --article-outline: 4px 4px 8px rgba(0, 0, 0, 0.03);
     --article-line: #bbb;
+    --code-bg: #f7f7f7;
     --pagination-fg: #111;
     --pagination-fg-hover: #fff;
     --footer-bg: #333;
