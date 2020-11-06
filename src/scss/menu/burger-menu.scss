@@ -1,0 +1,64 @@
+.burger-menu {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem;
+    background-color: transparent;
+    float: right;
+    position: relative;
+    &:focus {
+        outline: none;
+        .bar {
+            background-color: #fff;
+        }
+    }
+    .bar {
+        position: absolute;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        width: 2rem;
+        height: 0.25rem;
+        border-radius: 0.125rem;
+        font-size: 0.1rem;
+        background-color: #dbdbdb;
+        transition: transform 0.15s, background-color 0.15s;
+        &.bar-1 {
+            top: 0.8rem;
+        }
+        &.bar-2 {
+            top: 1.5rem;
+        }
+        &.bar-3 {
+            top: 2.2rem;
+        }
+    }
+    &.step-2 {
+        .bar {
+            &.bar-1 {
+                transform: translate3d(-50%, calc(-50% + 0.7rem), 0);
+            }
+            &.bar-3 {
+                transform: translate3d(-50%, calc(-50% - 0.7rem), 0);
+            }
+        }
+    }
+    &.step-3 {
+        .bar {
+            &.bar-1 {
+                transform: translate3d(-50%, calc(-50% + 0.7rem), 0) rotate(45deg) scale(1.2);
+            }
+            &.bar-3 {
+                transform: translate3d(-50%, calc(-50% - 0.7rem), 0) rotate(-45deg) scale(1.2);
+            }
+        }
+    }
+    &.step-2-3 {
+        .bar {
+            &.bar-2 {
+                display: none;
+            }
+        }
+    }
+}

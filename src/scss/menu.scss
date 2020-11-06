@@ -1,4 +1,7 @@
 & > nav.menu-dt {
+    @media (max-width: $mobileWidth - 1px) {
+        display: none;
+    }
     position: fixed;
     width: 100%;
     top: 0;
