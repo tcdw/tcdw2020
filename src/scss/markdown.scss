@@ -10,10 +10,10 @@
             line-height: $lineHeight + 0.1em;
         }
     }
-    h2 {
+    h1, h2 {
         $borderWidth: 0.3rem;
 
-        border-left: $borderWidth solid #000;
+        border-left: $borderWidth solid darken(invert($colorTheme), 26%);
         padding: 0 $articlePaddingMobile 0 $articlePaddingMobile - $borderWidth;
         margin-left: -$articlePaddingMobile;
         margin-right: -$articlePaddingMobile;
@@ -21,6 +21,14 @@
             padding: 0 $articlePadding 0 $articlePadding - $borderWidth;
             margin-left: -$articlePadding;
             margin-right: -$articlePadding;
+        }
+    }
+    a {
+        color: hsl(hue(invert($colorTheme)), 100%, 42%);
+        text-decoration: none;
+        &:hover {
+            color: hsl(hue(invert($colorTheme)), 100%, 60%);
+            text-decoration: underline;
         }
     }
     p {
@@ -37,6 +45,6 @@
         border-width: 2px 0 0;
     }
     pre {
-        overflow-x: scroll;
+        overflow-x: auto;
     }
 }

@@ -7,20 +7,30 @@
     }
     & > article, & > .comment {
         background-color: var(--article-bg);
-        padding: $articlePaddingMobile;
+        padding: 0 $articlePaddingMobile;
         @media (min-width: $mobileWidth) {
-            padding: $articlePadding;
+            padding: 0 $articlePadding;
         }
         border-radius: $listBlockRadius;
         box-shadow: var(--article-outline);
     }
     & > article {
+        h1 {
+            $lineHeight: 1.6em;
+            $computedHeight: 1em - ($lineHeight - 1) / 2;
+
+            line-height: $lineHeight;
+            padding: 0;
+            padding-top: $computedHeight;
+            margin: 0;
+            margin-bottom: $computedHeight;
+        }
         time {
             border-bottom: 2px var(--article-time-bar) dashed;
             width: 100%;
             display: block;
             padding-bottom: 0.9rem;
-            margin-bottom: 0.9rem;
+            margin: 0.9rem 0;
             color: var(--article-time-text);
 
             padding-left: 1.5em;
