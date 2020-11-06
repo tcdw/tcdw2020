@@ -26,6 +26,9 @@ $listTextDepth: 100;
 $listBlockPadding: 1.2rem;
 $listBlockRadius: 0.8rem;
 
+$articlePadding: 1.7rem;
+$articlePaddingMobile: 1.2rem;
+
 $footerMarginTop: 3rem;
 $footerLineHeight: 1.7em;
 $footerVerticalPadding: 1.8em;
@@ -48,6 +51,7 @@ $colorTheme: #ff9800;
     --article-title-hover: #{darken($colorTheme, 11%)};
     --article-time-bar: #e1e1e1;
     --article-time-text: #969696;
+    --article-outline: 4px 4px 8px rgba(0, 0, 0, 0.03);
     --pagination-fg: #111;
     --pagination-fg-hover: #fff;
     --footer-bg: #333;

@@ -20,6 +20,7 @@
         padding: $listBlockPadding;
         border-radius: $listBlockRadius;
         min-height: 14rem;
+        box-shadow: var(--article-outline);
         @media (min-width: $mobileWidth) {
             margin: $listPadding / 2;
             &:nth-child(2n - 1) {
@@ -128,6 +129,7 @@
     max-width: $mainWidth;
     margin: $listPaddingMobile auto;
     padding: 0 $listPaddingMobile;
+    box-shadow: var(--article-outline);
     @media (min-width: $mobileWidth) {
         margin: $listPadding auto;
         padding: 0 $listPadding;

@@ -1,19 +1,42 @@
 .markdown-body {
-    $lineHeight: 1.6rem;
+    $lineHeight: 1.6em;
 
     line-height: $lineHeight;
 
     @for $i from 1 through 6 {
         h#{7 - $i} {
             font-size: 1rem + ($i - 1) * 0.2rem;
-            margin: ($i * 0.3rem + 0.4rem) - ($lineHeight - 1) / 2 0;
+            margin: calc(#{($i * 0.3rem + 0.4rem)} - #{($lineHeight - 1) / 2}) 0;
+            line-height: $lineHeight + 0.1em;
+        }
+    }
+    h2 {
+        $borderWidth: 0.3rem;
+
+        border-left: $borderWidth solid #000;
+        padding: 0 $articlePaddingMobile 0 $articlePaddingMobile - $borderWidth;
+        margin-left: -$articlePaddingMobile;
+        margin-right: -$articlePaddingMobile;
+        @media (min-width: $mobileWidth) {
+            padding: 0 $articlePadding 0 $articlePadding - $borderWidth;
+            margin-left: -$articlePadding;
+            margin-right: -$articlePadding;
         }
     }
     p {
         font-size: 1rem;
-        margin: 0.8rem - ($lineHeight - 1) / 2 0;
+        margin: calc(0.8rem - #{($lineHeight - 1) / 2}) 0;
     }
     ul, ol {
         padding-left: 2rem;
+    }
+    hr {
+        margin: 1rem auto;
+        width: 6.5rem;
+        border: 1px solid #b2bcc4;
+        border-width: 2px 0 0;
+    }
+    pre {
+        overflow-x: scroll;
     }
 }

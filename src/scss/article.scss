@@ -1,18 +1,40 @@
 & > main.content {
     max-width: $mainWidth;
-    // margin: $listPaddingMobile auto;
     margin-top: -$bannerOverflow - ($listPadding / 2);
     padding: 0 $listPaddingMobile;
     @media (min-width: $mobileWidth) {
-        // margin: $listPadding auto;
         padding: 0 $listPadding;
     }
     & > article, & > .comment {
         background-color: var(--article-bg);
-        padding: $listBlockPadding;
+        padding: $articlePaddingMobile;
+        @media (min-width: $mobileWidth) {
+            padding: $articlePadding;
+        }
         border-radius: $listBlockRadius;
+        box-shadow: var(--article-outline);
     }
     & > article {
+        time {
+            border-bottom: 2px var(--article-time-bar) dashed;
+            width: 100%;
+            display: block;
+            padding-bottom: 0.9rem;
+            margin-bottom: 0.9rem;
+            color: var(--article-time-text);
+
+            padding-left: 1.5em;
+            position: relative;
+            box-sizing: border-box;
+            svg.icon {
+                position: absolute;
+                width: 1em;
+                height: 1em;
+                left: 0;
+                display: inline-block;
+                fill: var(--article-time-text);
+            }
+        }
         @import './markdown.scss';
     }
     & > .comment {
