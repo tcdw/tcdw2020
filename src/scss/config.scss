@@ -1,6 +1,7 @@
 // SCSS 变量
+$mobileWidth: 640px;
+
 $mainWidth: 54rem;
-$mobileWidth: 40rem;
 
 $menuWidth: 66rem;
 $menuHeight: 4rem;
@@ -39,6 +40,8 @@ $colorTheme: #ff9800;
 :root {
     --theme: #{$colorTheme};
     --root-bg: #eee;
+    --selection-bg: #555;
+    --selection-fg: #f8f8f8;
     --menu-shadow-on: 0 0 3rem 0 rgba(0, 0, 0, 0.22);
     --menu-shadow-off: 0 0 3rem 0 rgba(0, 0, 0, 0);
     --menu-dt-bg: #fff;

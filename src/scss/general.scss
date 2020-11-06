@@ -11,6 +11,11 @@ body {
     background-color: var(--root-bg);
 }
 
+::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-fg);
+}
+
 .wrap {
     margin: 0 auto;
     box-sizing: content-box;
