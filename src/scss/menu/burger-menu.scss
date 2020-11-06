@@ -1,56 +1,61 @@
 .burger-menu {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    $size: 3rem;
+    $margin: 0.5rem;
+    $barWidth: 2rem;
+    $barHeight: 0.25rem;
+    $gap: 0.66rem;
+
+    appearance: none;
     border: 0;
-    width: 3rem;
-    height: 3rem;
-    margin: 0.5rem;
+    width: $size;
+    height: $size;
+    margin: $margin;
     background-color: transparent;
     float: right;
     position: relative;
     &:focus {
         outline: none;
         .bar {
-            background-color: #fff;
+            background-color: var(--menu-btn-focus);
         }
     }
     .bar {
         position: absolute;
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
-        width: 2rem;
-        height: 0.25rem;
-        border-radius: 0.125rem;
+        width: $barWidth;
+        height: $barHeight;
+        border-radius: $barHeight / 2;
         font-size: 0.1rem;
-        background-color: #dbdbdb;
+        background-color: var(--menu-btn-normal);
         transition: transform 0.15s, background-color 0.15s;
         &.bar-1 {
-            top: 0.8rem;
+            top: $size / 2 - $gap;
         }
         &.bar-2 {
-            top: 1.5rem;
+            top: $size / 2;
         }
         &.bar-3 {
-            top: 2.2rem;
+            top: $size / 2 + $gap;
         }
     }
     &.step-2 {
         .bar {
             &.bar-1 {
-                transform: translate3d(-50%, calc(-50% + 0.7rem), 0);
+                transform: translate3d(-50%, calc(-50% + #{$gap}), 0);
             }
             &.bar-3 {
-                transform: translate3d(-50%, calc(-50% - 0.7rem), 0);
+                transform: translate3d(-50%, calc(-50% - #{$gap}), 0);
             }
         }
     }
     &.step-3 {
         .bar {
             &.bar-1 {
-                transform: translate3d(-50%, calc(-50% + 0.7rem), 0) rotate(45deg) scale(1.2);
+                transform: translate3d(-50%, calc(-50% + #{$gap}), 0) rotate(45deg) scale(1.2);
             }
             &.bar-3 {
-                transform: translate3d(-50%, calc(-50% - 0.7rem), 0) rotate(-45deg) scale(1.2);
+                transform: translate3d(-50%, calc(-50% - #{$gap}), 0) rotate(-45deg) scale(1.2);
             }
         }
     }

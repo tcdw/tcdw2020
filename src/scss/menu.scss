@@ -1,14 +1,17 @@
+& > nav.menu-sm, & > nav.menu-dt {
+    position: fixed;
+    width: 100%;
+    background-color: var(--menu-dt-bg);
+    z-index: $menuDepth;
+}
+
 & > nav.menu-dt {
+    top: 0;
+    box-shadow: var(--menu-shadow-on);
+    transition: box-shadow 0.3s;
     @media (max-width: $mobileWidth - 1px) {
         display: none;
     }
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background-color: var(--menu-dt-bg);
-    z-index: $menuDepth;
-    box-shadow: var(--menu-shadow-on);
-    transition: box-shadow 0.3s;
     &.top {
         box-shadow: var(--menu-shadow-off);
     }
@@ -80,5 +83,61 @@
     }
     .rss {
         float: right;
+    }
+}
+
+& > nav.menu-sm {
+    @media (min-width: $mobileWidth) {
+        display: none;
+    }
+
+    bottom: calc(100% - #{$menuHeight});
+    box-shadow: var(--menu-shadow-off);
+    transition: box-shadow 0.3s, transform $menuSlideSpeed;
+    &.focus, &.opened {
+        box-shadow: var(--menu-shadow-on);
+    }
+    &.opened {
+        transform: translateY(calc(100% - #{$menuHeight}));
+    }
+    .main {
+        height: $menuHeight;
+        line-height: $menuHeight;
+        position: relative;
+        a.avatar {
+            display: block;
+            background-image: url(avatar_2020.png);
+            background-size: contain;
+            width: $menuAvatarSizeMobile;
+            height: $menuAvatarSizeMobile;
+            position: absolute;
+            border-radius: 50%;
+            left: 1rem;
+            top: $menuHeight / 2 - $menuAvatarSizeMobile / 2;
+        }
+        @import './menu/burger-menu.scss';
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            display: block;
+            margin: 0;
+            padding: 0;
+            a {
+                height: 3.5rem;
+                line-height: 3.5rem;
+                display: block;
+                padding: 0 $menuItemPadding;
+                font-size: $menuTextSize;
+                text-decoration: none;
+                color: var(--menu-dt-fg);
+                transition: background-color 0.2s;
+                font-weight: bold;
+                &:hover, &:focus {
+                    background-color: var(--theme);
+                }
+            }
+        }
     }
 }

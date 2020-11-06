@@ -51,3 +51,24 @@ body {
     width: 50px;
     height: 50px;
 }
+
+.overlay {
+    display: block;
+    @media (min-width: $mobileWidth) {
+        display: none;
+    }
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9000;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+    transition: background-color $menuSlideSpeed;
+    &.active {
+        background-color: rgba(0, 0, 0, 0.76);
+        pointer-events: all;
+    }
+}
+
