@@ -44,7 +44,25 @@
         border: 1px solid var(--article-line);
         border-width: 2px 0 0;
     }
+    pre, code {
+        font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+    }
     pre {
         overflow-x: auto;
+    }
+    & > pre {
+        margin: 0 #{-$articlePaddingMobile};
+        @media (min-width: $mobileWidth) {
+            margin: 0 #{-$articlePadding};
+        }
+        code {
+            $lineHeight: 1.5em;
+
+            line-height: $lineHeight;
+            padding: calc(.9rem - #{($lineHeight - 1) / 2}) $articlePaddingMobile;
+            @media (min-width: $mobileWidth) {
+                padding: calc(.9rem - #{($lineHeight - 1) / 2}) $articlePadding;
+            }
+        }
     }
 }
