@@ -3,7 +3,7 @@ import './scss/main.scss';
 const desktopMenu = document.getElementById('menu-dt');
 const mobileMenu = document.getElementById('menu-sm');
 const burgerMenu = document.getElementById('burger-menu');
-const overlay = document.getElementById('overlay');
+const overlay = document.createElement('div');
 const menuItems = mobileMenu.querySelectorAll('li a');
 let menuTimer;
 let menuOpen = false;
@@ -15,10 +15,10 @@ const navTopStyle = () => {
         window.getComputedStyle(document.documentElement).fontSize, 10,
     );
     if (scroll > bannerHeight * fontSize) {
-        desktopMenu.classList.remove('top');
+        desktopMenu.classList.add('focus');
         mobileMenu.classList.add('focus');
     } else {
-        desktopMenu.classList.add('top');
+        desktopMenu.classList.remove('focus');
         mobileMenu.classList.remove('focus');
     }
 };
@@ -66,4 +66,7 @@ for (let i = 0; i < menuItems.length; i++) {
     menuItems[i].addEventListener('click', closeMobileMenuEvent);
 }
 
+overlay.className = 'overlay';
+overlay.ariaHidden = true;
 overlay.addEventListener('click', closeMobileMenuEvent);
+document.body.appendChild(overlay);

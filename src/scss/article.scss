@@ -5,6 +5,9 @@
     @media (min-width: $mobileWidth) {
         padding: 0 $listPadding;
     }
+    @media (max-width: $mobileWidthSmall) {
+        padding: 0;
+    }
     & > article, & > .comment {
         background-color: var(--article-bg);
         padding: 0 $articlePaddingMobile;
@@ -13,6 +16,9 @@
         }
         border-radius: $listBlockRadius;
         box-shadow: var(--article-outline);
+        @media (max-width: $mobileWidthSmall) {
+            border-radius: 0;
+        }
     }
     & > article {
         h1 {

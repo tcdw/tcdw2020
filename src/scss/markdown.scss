@@ -45,11 +45,15 @@
         border-width: 2px 0 0;
     }
     pre, code {
-        font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+        font-family: 'Sarasa Mono SC', Consolas, Monaco, 'Courier New', Courier, monospace;
     }
     pre {
         overflow-x: auto;
         background-color: var(--code-bg);
+    }
+    code {
+        padding: 0.2em;
+        border-radius: 0.2em;
     }
     & > pre {
         margin: 0 #{-$articlePaddingMobile};
@@ -61,6 +65,7 @@
 
             line-height: $lineHeight;
             padding: calc(.9rem - #{($lineHeight - 1) / 2}) $articlePaddingMobile;
+            border-radius: 0;
             @media (min-width: $mobileWidth) {
                 padding: calc(.9rem - #{($lineHeight - 1) / 2}) $articlePadding;
             }

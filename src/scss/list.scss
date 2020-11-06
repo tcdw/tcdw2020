@@ -129,7 +129,6 @@
     max-width: $mainWidth;
     margin: $listPaddingMobile auto;
     padding: 0 $listPaddingMobile;
-    box-shadow: var(--article-outline);
     @media (min-width: $mobileWidth) {
         margin: $listPadding auto;
         padding: 0 $listPadding;
@@ -137,6 +136,7 @@
     .inner {
         background-color: var(--article-bg);
         border-radius: $listBlockRadius;
+        box-shadow: var(--article-outline);
         position: relative;
         a {
             $fadeDelay: 0.16s;

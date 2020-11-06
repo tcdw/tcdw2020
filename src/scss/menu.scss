@@ -7,13 +7,13 @@
 
 & > nav.menu-dt {
     top: 0;
-    box-shadow: var(--menu-shadow-on);
+    box-shadow: var(--menu-shadow-off);
     transition: box-shadow 0.3s;
     @media (max-width: $mobileWidth - 1px) {
         display: none;
     }
-    &.top {
-        box-shadow: var(--menu-shadow-off);
+    &.focus {
+        box-shadow: var(--menu-shadow-on);
     }
     & > .wrap {
         max-width: $menuWidth;
@@ -91,14 +91,15 @@
         display: none;
     }
 
-    bottom: calc(100% - #{$menuHeight});
+    top: 0;
     box-shadow: var(--menu-shadow-off);
     transition: box-shadow 0.3s, transform $menuSlideSpeed;
+    transform: translateY(calc(-100% + #{$menuHeight}));
     &.focus, &.opened {
         box-shadow: var(--menu-shadow-on);
     }
     &.opened {
-        transform: translateY(calc(100% - #{$menuHeight}));
+        transform: translateY(0);
     }
     .main {
         height: $menuHeight;
