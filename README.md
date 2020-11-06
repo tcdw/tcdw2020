@@ -1,5 +1,11 @@
 # tcdw2020
-tcdw2020 blog theme
 
-Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-Icons made by <a href="https://www.flaticon.com/authors/kirill-kazachek" title="Kirill Kazachek">Kirill Kazachek</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+tcdw2020 博客主题
+
+## 亮点
+
+- 扁平卡片设计
+- 轻量化
+- 暗色模式（跟随系统设置）
+- 无 CSS 框架
+- 无 jQuery 及 Babel，仅使用原生 JS

@@ -40,7 +40,7 @@
     }
     hr {
         margin: 1rem auto;
-        width: 6.5rem;
+        width: 7rem;
         border: 1px solid var(--article-line);
         border-width: 2px 0 0;
     }
@@ -54,6 +54,7 @@
     code {
         padding: 0.2em;
         border-radius: 0.2em;
+        background-color: var(--code-bg);
     }
     & > pre {
         margin: 0 #{-$articlePaddingMobile};
@@ -69,8 +70,6 @@
             @media (min-width: $mobileWidth) {
                 padding: calc(.9rem - #{($lineHeight - 1) / 2}) $articlePadding;
             }
-
-            background-color: var(--code-bg);
         }
     }
 }
