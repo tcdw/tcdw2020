@@ -6,6 +6,7 @@
 
     @for $i from 1 through 6 {
         h#{7 - $i} {
+            color: var(--content-title-fg);
             font-size: 1rem + ($i - 1) * 0.2rem;
             margin: calc(#{($i * 0.3rem + 0.4rem)} - #{($mdLineHeight - 1) / 2}) 0;
             line-height: $mdLineHeight + 0.1em;
@@ -14,7 +15,7 @@
     h1, h2 {
         $borderWidth: 0.3rem;
 
-        border-left: $borderWidth solid darken(invert($colorTheme), 26%);
+        border-left: $borderWidth solid var(--content-titie-lead);
         padding: 0 $articlePaddingMobile 0 $articlePaddingMobile - $borderWidth;
         margin-left: -$articlePaddingMobile;
         margin-right: -$articlePaddingMobile;
@@ -25,10 +26,10 @@
         }
     }
     a {
-        color: hsl(hue(invert($colorTheme)), 100%, 42%);
+        color: var(--content-anchor);
         text-decoration: none;
         &:hover {
-            color: hsl(hue(invert($colorTheme)), 100%, 60%);
+            color: var(--content-anchor-hover);
             text-decoration: underline;
         }
     }
@@ -54,8 +55,8 @@
     code {
         padding: 0.2em;
         border-radius: 0.2em;
-        background-color: var(--code-bg);
-        color: var(--code-fg);
+        background-color: var(--content-code-bg);
+        color: var(--content-code-fg);
     }
     & > pre {
         margin: 0 #{-$articlePaddingMobile};
@@ -75,7 +76,7 @@
     blockquote {
         margin: 0 0.6em;
         line-height: $mdLineHeight;
-        background: var(--blockquote-bg);
+        background: var(--content-blockquote-bg);
         padding: calc(.8em - #{($mdLineHeight - 1) / 2}) .8em calc(.8em - #{($mdLineHeight - 1) / 2}) calc(.8em + .3125rem);
         border-left: .3125rem $colorTheme solid;
         pre > code {
@@ -89,27 +90,26 @@
         width: 100%;
         max-width: 100%;
         border-collapse: collapse;
+        th, td {
+            padding: .6em;
+            text-align: left;
+            vertical-align: middle;
+        }
+        thead > tr {
+            border-bottom: 2px solid var(--content-table-border1);
+        }
+        tbody > tr {
+            border-bottom: 1px solid var(--content-table-border2);
+            transition: background-color 0.25s;
+            &:last-child {
+                border-bottom: 0
+            }
+            &:hover {
+                background: var(--content-table-hover);
+            }
+        }
     }
-    table th, table td {
-        padding: .6em;
-        text-align: left;
-        vertical-align: middle;
-    }
-    table > thead > tr {
-        border-bottom: 2px solid #ccc;
-    }
-    table > tbody > tr {
-        border-bottom: 1px solid #ddd;
-    }
-    table > tbody > tr:last-child {
-        border-bottom: 0
-    }
-    table > tbody > tr {
-        transition: background-color 0.25s;
-    }
-    table > tbody > tr:hover {
-        background: #eee;
-    }
+    
     
     table th, table td { 
         white-space: nowrap;

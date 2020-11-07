@@ -21,6 +21,7 @@
         }
     }
     & > article {
+        padding-bottom: 2rem;
         h1 {
             $lineHeight: 1.6em;
             $computedHeight: 1em - ($lineHeight - 1) / 2;
@@ -30,6 +31,8 @@
             padding-top: $computedHeight;
             margin: 0;
             margin-bottom: $computedHeight;
+            color: var(--content-title-fg);
+            font-size: 2rem;
         }
         time {
             border-bottom: 2px var(--article-time-bar) dashed;
@@ -55,5 +58,9 @@
     }
     & > .comment {
         margin-top: 1rem;
+        padding: 1rem $articlePaddingMobile;
+        @media (min-width: $mobileWidth) {
+            padding: 1rem $articlePadding;
+        }
     }
 }

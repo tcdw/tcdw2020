@@ -1,7 +1,7 @@
 & > header.banner {
     padding-top: $menuHeight;
     padding-bottom: $bannerOverflow;
-    background-color: var(--theme);
+    background-color: var(--banner-bg);
     color: var(--banner-fg);
     .wrap {
         max-width: $bannerWidth;

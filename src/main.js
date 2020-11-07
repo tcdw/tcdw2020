@@ -3,18 +3,18 @@ import './scss/main.scss';
 const desktopMenu = document.getElementById('menu-dt');
 const mobileMenu = document.getElementById('menu-sm');
 const burgerMenu = document.getElementById('burger-menu');
+const titleElem = document.querySelector('body > header h1');
 const overlay = document.createElement('div');
 const menuItems = mobileMenu.querySelectorAll('li a');
 let menuTimer;
 let menuOpen = false;
-const bannerHeight = 2;
 
 const navTopStyle = () => {
     const scroll = window.pageYOffset;
     const fontSize = Number.parseInt(
         window.getComputedStyle(document.documentElement).fontSize, 10,
     );
-    if (scroll > bannerHeight * fontSize) {
+    if (scroll > ((titleElem.getBoundingClientRect().y + scroll) - fontSize * 5)) {
         desktopMenu.classList.add('focus');
         mobileMenu.classList.add('focus');
     } else {

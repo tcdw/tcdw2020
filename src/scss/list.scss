@@ -150,7 +150,7 @@
             transition: color $fadeDelay, background-color $fadeDelay;
             &:hover {
                 color: var(--pagination-fg-hover);
-                background-color: var(--theme);
+                background-color: var(--pagination-bg-hover);
                 text-decoration: none;
                 .icon {
                     fill: var(--pagination-fg-hover);
