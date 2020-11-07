@@ -1,6 +1,7 @@
 .markdown-body {
     $mdLineHeight: 1.7em;
 
+    color: var(--content-fg);
     line-height: $mdLineHeight;
 
     @for $i from 1 through 6 {
@@ -49,12 +50,12 @@
     }
     pre {
         overflow-x: auto;
-        background-color: var(--code-bg);
     }
     code {
         padding: 0.2em;
         border-radius: 0.2em;
         background-color: var(--code-bg);
+        color: var(--code-fg);
     }
     & > pre {
         margin: 0 #{-$articlePaddingMobile};
@@ -74,7 +75,7 @@
     blockquote {
         margin: 0 0.6em;
         line-height: $mdLineHeight;
-        background: rgba(0, 0, 0, 0.05);
+        background: var(--blockquote-bg);
         padding: calc(.8em - #{($mdLineHeight - 1) / 2}) .8em calc(.8em - #{($mdLineHeight - 1) / 2}) calc(.8em + .3125rem);
         border-left: .3125rem $colorTheme solid;
         pre > code {

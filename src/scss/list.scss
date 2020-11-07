@@ -189,6 +189,7 @@
             top: 0;
             transform: translateX(-50%);
             display: none;
+            color: var(--pagination-fg);
             @media (min-width: $mobileWidth) {
                 display: block;
             }
