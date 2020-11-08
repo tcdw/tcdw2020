@@ -15,7 +15,7 @@
     h1, h2 {
         $borderWidth: 0.3rem;
 
-        border-left: $borderWidth solid var(--content-titie-lead);
+        border-left: $borderWidth solid var(--content-title-lead);
         padding: 0 $articlePaddingMobile 0 $articlePaddingMobile - $borderWidth;
         margin-left: -$articlePaddingMobile;
         margin-right: -$articlePaddingMobile;

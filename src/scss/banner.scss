@@ -3,6 +3,10 @@
     padding-bottom: $bannerOverflow;
     background-color: var(--banner-bg);
     color: var(--banner-fg);
+    @media print {
+        padding-top: 0;
+        color: #000;
+    }
     .wrap {
         max-width: $bannerWidth;
         height: $bannerHeight;

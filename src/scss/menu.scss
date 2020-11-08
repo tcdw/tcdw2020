@@ -3,6 +3,9 @@
     width: 100%;
     background-color: var(--menu-dt-bg);
     z-index: $menuDepth;
+    @media print {
+        display: none;
+    }
 }
 
 & > nav.menu-dt {
