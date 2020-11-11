@@ -65,11 +65,5 @@
         }
         @import './markdown.scss';
     }
-    & > .comment {
-        margin-top: 1rem;
-        padding: 1rem $articlePaddingMobile;
-        @media (min-width: $mobileWidth) {
-            padding: 1rem $articlePadding;
-        }
-    }
+    @import './comment.scss';
 }
