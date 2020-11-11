@@ -1,7 +1,6 @@
 & > .comment {
-    --padding-v: 1rem;
+    --padding-v: 1.3rem;
     --avatar-size: 4rem;
-    --avatar-padding: 0.5rem;
 
     margin-top: 1rem;
     padding: 0 $articlePaddingMobile;
@@ -9,11 +8,13 @@
         padding: 0 $articlePadding;
     }
     h2 {
-        font-size: 1.35rem;
+        font-size: 1.4rem;
+        line-height: 1em;
         margin: 0;
         padding: var(--padding-v) 0;
         margin-bottom: var(--padding-v);
         border-bottom: 2px solid var(--article-line);
+        color: var(--content-title-fg);
     }
     .comments {
         padding: 0;
@@ -31,11 +32,18 @@
                 width: var(--avatar-size);
                 height: var(--avatar-size);
                 background-size: cover;
-                border-radius: var(--avatar-padding);
-                // margin: var(--avatar-padding) 0;
+                border-radius: 0.7rem;
             }
-            .content {
-                padding-left: var(--avatar-padding);
+            .entry {
+                padding-left: 1.2rem;
+                .name {
+                    font-weight: bold;
+                    color: var(--content-title-fg);
+                    padding-bottom: 0.3rem;
+                }
+                .content {
+                    color: var(--content-fg);
+                }
             }
         }
     }
