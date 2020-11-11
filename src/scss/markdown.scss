@@ -1,3 +1,5 @@
+@import './mixins/line-height.scss';
+
 .markdown-body {
     $mdLineHeight: 1.7em;
 
@@ -65,12 +67,12 @@
         }
         code {
             $codeLineHeight: 1.5em;
-            line-height: $codeLineHeight;
-            padding: calc(.9rem - #{($codeLineHeight - 1) / 2}) $articlePaddingMobile;
+            padding: 0 $articlePaddingMobile;
             border-radius: 0;
             @media (min-width: $mobileWidth) {
-                padding: calc(.9rem - #{($codeLineHeight - 1) / 2}) $articlePadding;
+                padding: 0 $articlePadding;
             }
+            @include lineHeight($codeLineHeight, .9rem, .9rem);
         }
     }
     blockquote {
