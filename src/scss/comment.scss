@@ -1,9 +1,7 @@
 & > .comment {
-    $paddingV: 1rem;
-    $avatarSize: 4rem;
-    $avatarSizeMobile: 3rem;
-    $avatarPadding: 0.7rem;
-    $avatarPaddingMobile: 0.5rem;
+    --padding-v: 1rem;
+    --avatar-size: 4rem;
+    --avatar-padding: 0.5rem;
 
     margin-top: 1rem;
     padding: 0 $articlePaddingMobile;
@@ -13,7 +11,8 @@
     h2 {
         font-size: 1.35rem;
         margin: 0;
-        padding: $paddingV 0;
+        padding: var(--padding-v) 0;
+        margin-bottom: var(--padding-v);
         border-bottom: 2px solid var(--article-line);
     }
     .comments {
@@ -23,19 +22,20 @@
             padding: 0;
             margin: 0;
             display: grid;
-            grid-template-columns: $avatarSizeMobile + $avatarPaddingMobile * 2 max-content;
-            @media (min-width: $mobileWidth) {
-                grid-template-columns: $avatarSize + $avatarPadding * 2 max-content;
-            }
+            grid-template-columns: var(--avatar-size) max-content;
             grid-template-rows: 1fr;
             gap: 0px 0px;
             grid-template-areas:
                 ". .";
             .avatar > div {
-                width: $avatarSize;
-                height: $avatarSize;
+                width: var(--avatar-size);
+                height: var(--avatar-size);
                 background-size: cover;
-                border-radius: $avatarPadding;
+                border-radius: var(--avatar-padding);
+                // margin: var(--avatar-padding) 0;
+            }
+            .content {
+                padding-left: var(--avatar-padding);
             }
         }
     }
