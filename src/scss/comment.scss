@@ -56,6 +56,8 @@
                 .content {
                     color: var(--content-fg);
                     margin: 0;
+                    white-space: pre-wrap;
+                    word-break: break-all;
                     @include lineHeight(1.6rem, 0.7rem, 0.7rem);
                 }
                 .meta {
