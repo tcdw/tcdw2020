@@ -3,9 +3,11 @@
 & > .comment {
     --padding-v: 1.2rem;
     --avatar-size: 3.5rem;
+    --entry-padding: 1rem;
     @media (min-width: $mobileWidth) {
         --padding-v: 1.3rem;
         --avatar-size: 4rem;
+        --entry-padding: 1.2rem;
     }
 
     margin-top: 1rem;
@@ -44,10 +46,7 @@
                 border-radius: 0.7rem;
             }
             .entry {
-                padding-left: 1rem;
-                @media (min-width: $mobileWidth) {
-                    padding-left: 1.2rem;
-                }
+                padding-left: var(--entry-padding);
                 .name {
                     font-weight: bold;
                     color: var(--content-title-fg);
@@ -96,6 +95,16 @@
                         }
                     }
                 }
+            }
+        }
+        &.nested {
+            margin-left: calc((var(--avatar-size) + var(--entry-padding)) * -0.5);
+            // margin-left: -3.2rem;
+            // @media (min-width: $mobileWidth) {
+            //     margin-left: -3rem;
+            // }
+            li {
+                padding-top: var(--padding-v);
             }
         }
     }
