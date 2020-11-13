@@ -1,4 +1,5 @@
 import './scss/main.scss';
+import './comment-mockup';
 
 const desktopMenu = document.getElementById('menu-dt');
 const mobileMenu = document.getElementById('menu-sm');
