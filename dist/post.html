@@ -238,9 +238,17 @@
 </tbody></table> -->
             </div>
         </article>
-        <div class="comment">
+        <div class="comment" aria-label="评论">
             <h2>10 Comments</h2>
-            <ul class="comments">
+            <form class="input-area">
+                <div class="info">
+                    <input type="text">
+                    <input type="email">
+                    <input type="url">
+                </div>
+                <textarea></textarea>
+            </form>
+            <ul class="comments" aria-label="评论列表">
                 <li class="item">
                     <div class="avatar">
                         <div style="background-image: url(./assets/avatar_2020.png)"></div>
@@ -255,6 +263,7 @@ The quick brown fox jumps over the lazy dog. 我能够吞下玻璃而不伤身�
                         </ul>
                         <div class="reply-injection"></div>
                         <ul class="comments nested">
+                            <!-- 可以把整个 li.class 插入到这里。 -->
                             <li class="item">
                                 <div class="avatar">
                                     <div style="background-image: url(./assets/avatar_2020.png)"></div>
