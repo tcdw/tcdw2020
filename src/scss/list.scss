@@ -2,15 +2,17 @@
 
 & > main.list {
     max-width: $mainWidth;
-    margin-top: -$bannerOverflow - ($listPadding / 2);
+    margin-top: -$bannerOverflow - ($listPaddingMobile);
     padding: 0;
     @media screen and (min-width: $mobileWidth) {
         padding: 0 $listPadding;
-        margin-bottom: -($listPadding / 2);
+        margin-top: -$bannerOverflow;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         gap: 0px 0px;
+        column-gap: $listPadding;
+        row-gap: $listPadding;
         grid-template-areas:
             ". ."
             ". ."
@@ -27,13 +29,7 @@
             box-shadow: unset;
         }
         @media screen and (min-width: $mobileWidth) {
-            margin: $listPadding / 2;
-            &:nth-child(2n - 1) {
-                margin-left: 0;
-            }
-            &:nth-child(2n) {
-                margin-right: 0;
-            }
+            margin: 0;
         }
         h2 {
             $lineHeight: 1.7em;
