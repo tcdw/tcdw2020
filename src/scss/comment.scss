@@ -117,6 +117,7 @@
     }
     form.input-area {
         padding-bottom: var(--padding-v);
+        position: relative;
         .info {
             display: flex;
             align-items: flex-start;
@@ -139,14 +140,24 @@
             background-color: rgba(255, 255, 255, 0.09);
             color: #eee;
             width: 100%;
+            font-size: 1rem;
         }
         textarea.content, .ghost-content {
+            $lineHeight: 1.6rem;
+            line-height: $lineHeight;
+            padding: 0.55rem - ($lineHeight - 1) / 2 0.55rem;
             min-height: 6rem;
             margin-bottom: 0.9rem;
+            resize: none;
+            overflow: hidden;
         }
         .ghost-content {
             white-space: pre-wrap;
-            word-break: break-all;
+            position: absolute;
+            top: 0;
+            pointer-events: none;
+            visibility: hidden;
+            // word-break: break-all;
         }
     }
 }
