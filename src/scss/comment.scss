@@ -118,18 +118,36 @@
     form.input-area {
         padding-bottom: var(--padding-v);
         position: relative;
+        @media (max-width: $mobileWidth - 1) {
+            margin-top: -0.6rem;
+        }
+        label.upper-tip {
+            font-size: (14rem / 16);
+            color: var(--comment-tip);
+            font-weight: bold;
+            padding-left: 0.2rem;
+            padding-bottom: 0.35rem;
+            display: block;
+            @media (max-width: $mobileWidth - 1) {
+                padding-top: 0.6rem;
+            }
+        }
         .info {
-            display: flex;
-            align-items: flex-start;
-            padding-bottom: 0.9rem;
-            input {
-                flex: 1 1 0%;
-                &:not(:first-child) {
-                    margin-left: 0.9rem;
+            @media (min-width: $mobileWidth) {
+                display: flex;
+                align-items: flex-start;
+                padding-bottom: 0.9rem;
+            }
+            div {
+                @media (min-width: $mobileWidth) {
+                    flex: 1 1 0%;
+                    &:not(:first-child) {
+                        margin-left: 0.9rem;
+                    }
                 }
             }
         }
-        input, textarea.content, .ghost-content {
+        input.text, textarea.content, .ghost-content {
             appearance: none;
             display: block;
             border: 0;
@@ -137,10 +155,13 @@
             padding: 0.55rem;
             margin: 0;
             box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.09);
-            color: #eee;
+            background-color: var(--comment-form-bg);
+            color: var(--comment-form-fg);
             width: 100%;
             font-size: 1rem;
+            &:focus {
+                outline: 2px solid var(--comment-tip-hl);
+            }
         }
         textarea.content, .ghost-content {
             $lineHeight: 1.6rem;
@@ -158,6 +179,93 @@
             pointer-events: none;
             visibility: hidden;
             // word-break: break-all;
+        }
+        .checkbox-items {
+            font-size: (14rem / 16);
+            color: var(--comment-tip);
+            div:not(:first-child) {
+                padding-top: 0.5rem;
+            }
+        }
+        .checkbox-item {
+            display: flex;
+            input {
+                width: 0;
+                height: 0;
+                font-size: 0;
+                position: relative;
+                &::before, &::after {
+                    content: " ";
+                    position: absolute;
+                    width: 1rem;
+                    height: 1rem;
+                    left: 0;
+                    top: 0.1rem;
+                }
+                &::before {
+                    border-radius: 50%;
+                    z-index: 15;
+                    border: 0.25rem solid var(--theme);
+                    background-color: #fff;
+                    box-sizing: border-box;
+                    opacity: 0;
+                    transition: opacity 0.2s;
+                }
+                &::after {
+                    background-color: var(--comment-form-bg);
+                    border-radius: 50%;
+                    z-index: 10;
+                }
+                &:checked {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+            input:checked + label {
+                color: var(--comment-tip-hl);
+            }
+            label {
+                margin-left: 1.5rem;
+                line-height: 1.2rem;
+                transition: color 0.2s;
+                font-weight: bold;
+            }
+        }
+        .notice {
+            display: block;
+            @include lineHeightWithoutMargin(1.6em);
+            a {
+                color: var(--comment-tip-hl);
+                text-decoration: none;
+                &:hover {
+                    color: var(--comment-tip-hl);
+                    text-decoration: underline;
+                }
+            }
+        }
+        .button-items {
+            display: flex;
+            margin-top: 0.9rem;
+            button {
+                appearance: none;
+                border: 0;
+                margin: 0;
+                padding: 0 1.3rem;
+                height: 2.2rem;
+                line-height: 2.2rem;
+                border-radius: .4rem;
+                font-weight: bold;
+            }
+            .submit {
+                background-color: #03a9f4;
+                color: #fff;
+                margin-right: 0.6rem;
+            }
+            .cancel {
+                background-color: #f44336;
+                color: #fff;
+            }
         }
     }
 }

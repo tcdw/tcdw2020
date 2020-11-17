@@ -242,12 +242,43 @@
             <h2>10 Comments</h2>
             <form class="input-area">
                 <div class="info">
-                    <input type="text">
-                    <input type="email">
-                    <input type="url">
+                    <div>
+                        <label class="upper-tip" for="tc-name">昵称</label>
+                        <input class="text" type="text" id="tc-name">
+                    </div>
+                    <div>
+                        <label class="upper-tip" for="tc-email">Email</label>
+                        <input class="text" type="email" id="tc-email">
+                    </div>
+                    <div>
+                        <label class="upper-tip" for="tc-url">个人主页</label>
+                        <input class="text" type="url" id="tc-website">
+                    </div>
                 </div>
-                <textarea class="content" id="actual-content"></textarea>
+                <div>
+                    <label class="upper-tip" for="actual-content">评论内容</label>
+                    <textarea class="content" id="actual-content"></textarea>
+                </div>
                 <div class="ghost-content" id="ghost-content"></div>
+                <div class="checkbox-items">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="receive-email">
+                        <label for="receive-email">接收电子邮件提醒</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="save-info">
+                        <label for="save-info">在浏览器保存我的个人信息</label>
+                    </div>
+                    <div class="notice">
+                        This site is protected by reCAPTCHA and the Google
+                        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+                    </div>
+                </div>
+                <div class="button-items">
+                    <button class="submit">发表评论</button>
+                    <button class="cancel">取消</button>
+                </div>
             </form>
             <ul class="comments" aria-label="评论列表">
                 <li class="item">
