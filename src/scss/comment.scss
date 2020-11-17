@@ -1,12 +1,12 @@
 @import './mixins/line-height.scss';
 
 & > .comment {
-    --padding-v: 1.2rem;
-    --avatar-size: 3.5rem;
+    --padding-v: 0.9rem;
+    --avatar-size: 3.2rem;
     --entry-padding: 1rem;
     @media (min-width: $mobileWidth) {
-        --padding-v: 1.3rem;
-        --avatar-size: 4rem;
+        --padding-v: 1rem;
+        --avatar-size: 3.5rem;
         --entry-padding: 1.2rem;
     }
 
@@ -124,7 +124,7 @@
         }
     }
     form.input-area {
-        padding-bottom: var(--padding-v);
+        padding-bottom: calc(var(--padding-v) * 2);
         position: relative;
         @media (max-width: $mobileWidth - 1) {
             margin-top: -0.6rem;
