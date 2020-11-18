@@ -12,8 +12,10 @@
 
     margin-top: 1rem;
     padding: 0 $articlePaddingMobile;
+    padding-bottom: var(--padding-v);
     @media (min-width: $mobileWidth) {
         padding: 0 $articlePadding;
+        padding-bottom: var(--padding-v);
     }
     h2 {
         font-size: 1.4rem;
