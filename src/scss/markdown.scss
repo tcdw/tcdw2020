@@ -68,11 +68,24 @@
         code {
             $codeLineHeight: 1.5em;
             padding: 0 $articlePaddingMobile;
+            @include lineHeightPadding($codeLineHeight, .9rem, .9rem);
             border-radius: 0;
             @media (min-width: $mobileWidth) {
                 padding: 0 $articlePadding;
+                @include lineHeightPadding($codeLineHeight, .9rem, .9rem);
             }
-            @include lineHeight($codeLineHeight, .9rem, .9rem);
+            &::-webkit-scrollbar {
+                width: 1rem;
+                height: 1rem;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: (8rem / 16);
+                background-color: var(--content-code-scrollbar);
+                border: (4rem / 16) solid var(--content-code-bg);
+            }
+            &::-webkit-scrollbar-track-piece {
+                background: var(--content-code-bg);
+            }
         }
     }
     blockquote {

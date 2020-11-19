@@ -4,6 +4,12 @@
     margin-bottom: calc(#{$marginBottom} - #{($lineHeight - 1) / 2});
 }
 
+@mixin lineHeightPadding($lineHeight, $marginTop, $marginBottom) {
+    line-height: $lineHeight;
+    padding-top: calc(#{$marginTop} - #{($lineHeight - 1) / 2});
+    padding-bottom: calc(#{$marginBottom} - #{($lineHeight - 1) / 2});
+}
+
 @mixin lineHeightWithoutMargin($lineHeight) {
     line-height: $lineHeight;
     margin-top: calc(#{($lineHeight - 1) / 2} * -1);

@@ -205,16 +205,16 @@
         .checkbox-item {
             display: flex;
             input {
-                width: 0;
-                height: 0;
-                font-size: 0;
+                display: none;
+            }
+            label {
                 position: relative;
                 &::before, &::after {
                     content: " ";
                     position: absolute;
                     width: 1rem;
                     height: 1rem;
-                    left: 0;
+                    left: -1.5rem;
                     top: 0.1rem;
                 }
                 &::before {
@@ -231,20 +231,16 @@
                     border-radius: 50%;
                     z-index: 10;
                 }
-                &:checked {
-                    &::before {
-                        opacity: 1;
-                    }
-                }
-            }
-            input:checked + label {
-                color: var(--comment-tip-hl);
-            }
-            label {
                 margin-left: 1.5rem;
                 line-height: 1.2rem;
                 transition: color 0.2s;
                 font-weight: bold;
+            }
+            input:checked + label {
+                color: var(--comment-tip-hl);
+                &::before {
+                    opacity: 1;
+                }
             }
         }
         .notice {
