@@ -1,0 +1,46 @@
+<nav class="menu-dt" id="menu-dt" aria-label="导航菜单">
+    <div class="wrap">
+        <a href="/" title="{{ system_config.Project_Name }}" class="avatar" style="background-image: url({{ system_config.Author_Image }})"></a>
+        <ul>
+            {%- for item in menu_list -%}
+                {%- if "absolute" in item -%}
+                    {%- set url = item.absolute -%}
+                {%- else -%}
+                    {%- set url = "/post/"+item.name -%}
+                {%- endif -%}
+                <li><a class="nav-item" href="{{url}}">{{ item.title }}</a></li>
+            {%- endfor -%}
+        </ul>
+        <div class="rss">
+            <a class="nav-item" href="/rss">订阅</a>
+        </div>
+    </div>
+</nav>
+<nav class="menu-sm" id="menu-sm" aria-label="导航菜单（手机）">
+    <ul>
+        <li><a class="nav-item" href="/">首页</a></li>
+        {%- for item in menu_list -%}
+            {%- if "absolute" in item -%}
+                {%- set url = item.absolute -%}
+            {%- else -%}
+                {%- set url = "/post/"+item.name -%}
+            {%- endif -%}
+            <li><a class="nav-item" href="{{url}}">{{ item.title }}</a></li>
+        {%- endfor -%}
+        <li><a class="nav-item" href="/rss">订阅</a></li>
+    </ul>
+    <div class="main">
+        <a href="/" title="{{ system_config.Project_Name }}" class="avatar" style="background-image: url({{ system_config.Author_Image }})"></a>
+        <button class="burger-menu" id="burger-menu" title="打开菜单">
+            <div class="bar bar-1"></div>
+            <div class="bar bar-2"></div>
+            <div class="bar bar-3"></div>
+        </button>
+    </div>
+</nav>
+<header class="banner" aria-label="横幅">
+    <div class="wrap">
+        <h1>{{ system_config.Project_Name }}</h1>
+        <div class="description">{{ system_config.Project_Description }}</div>
+    </div>
+</header>
