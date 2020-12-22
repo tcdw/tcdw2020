@@ -41,6 +41,9 @@
             border-bottom: 2px var(--article-time-bar) dashed;
             width: 100%;
             display: block;
+            &[datetime=""] {
+                display: none;
+            }
             padding-bottom: 0.9rem;
             margin: 0.9rem 0;
             color: var(--article-time-text);

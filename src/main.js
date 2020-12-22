@@ -71,3 +71,14 @@ overlay.className = 'overlay';
 overlay.ariaHidden = true;
 overlay.addEventListener('click', closeMobileMenuEvent);
 document.body.appendChild(overlay);
+
+// 表格 wrapper
+if (document.body.classList.contains('post')) {
+    const tables = document.querySelectorAll('.markdown-body > table');
+    tables.forEach((e) => {
+        const el = document.createElement('div');
+        el.className = 'table-container';
+        el.innerHTML = e.outerHTML;
+        e.replaceWith(el);
+    });
+}

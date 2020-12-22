@@ -26,7 +26,6 @@
     }
     a.avatar {
         display: block;
-        background-image: url(avatar_2020.png);
         background-size: contain;
         width: $menuAvatarSize;
         height: $menuAvatarSize;
@@ -110,7 +109,6 @@
         position: relative;
         a.avatar {
             display: block;
-            background-image: url(avatar_2020.png);
             background-size: contain;
             width: $menuAvatarSizeMobile;
             height: $menuAvatarSizeMobile;

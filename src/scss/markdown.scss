@@ -99,7 +99,23 @@
             border-radius: 0.5rem;
             background-color: var(--article-bg);
         }
-    }    
+    }
+    .table-container {
+        max-width: 100%;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            width: 1rem;
+            height: 1rem;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: (8rem / 16);
+            background-color: var(--content-code-scrollbar);
+            border: (4rem / 16) solid var(--article-bg);
+        }
+        &::-webkit-scrollbar-track-piece {
+            background: var(--article-bg);
+        }
+    }
     table {
         border: 0;
         width: 100%;
@@ -109,6 +125,7 @@
             padding: .6em;
             text-align: left;
             vertical-align: middle;
+            white-space: nowrap;
         }
         thead > tr {
             border-bottom: 2px solid var(--content-table-border1);
@@ -123,9 +140,6 @@
                 background: var(--content-table-hover);
             }
         }
-    }
-    table th, table td { 
-        white-space: nowrap;
     }
     img {
         max-width: 100%;
