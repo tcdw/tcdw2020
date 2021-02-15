@@ -38,7 +38,10 @@
         </button>
     </div>
 </nav>
-<header class="banner" aria-label="横幅">
+<header class="banner" aria-label="横幅" {% if "Cover_Image" in template_config -%}
+style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({{ template_config.Cover_Image }})" class="header-img"
+{%- endif -%}
+>
     <div class="wrap">
         <h1>{{ system_config.Project_Name }}</h1>
         <div class="description">{{ system_config.Project_Description }}</div>

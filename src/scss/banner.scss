@@ -3,6 +3,13 @@
     padding-bottom: $bannerOverflow;
     background-color: var(--banner-bg);
     color: var(--banner-fg);
+    &.header-img {
+        background-size: cover;
+        background-position: center;
+        .wrap {
+            text-shadow: 0.3rem 0.3rem 0.6rem black;
+        }
+    }
     @media print {
         padding-top: 0;
         color: #000;
